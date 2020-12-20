@@ -20,7 +20,10 @@
          <td><?php echo $r['firstname'] ?></td>
          <td><?php echo $r['lastname'] ?></td>
          <td><?php echo $r['specialty'] ?></td>
-         <td><a href ="view1.php?id=<?php echo $r['ID'] ?>" class = "btn btn-primary">View</a><td>
+         <td>
+         <a href ="view1.php?id=<?php echo $r['ID'] ?>" class = "btn btn-primary">View</a>
+         <a href ="edit.php?id=<?php echo $r['ID'] ?>" class = "btn btn-warning">Edit</a>
+         <td>
          </tr>
     <?php } ?>
     </table>
