@@ -19,9 +19,9 @@
     if($results){
         header("Location: index.php");
     }else{
-        echo 'error';
+        include_once 'includes/erro.php';
     }
   }else{
-      echo 'error';
+    include_once 'includes/erro.php';
   }
 ?>

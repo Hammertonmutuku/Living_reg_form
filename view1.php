@@ -6,7 +6,7 @@
    
    // Get members by id
    if(!isset($_GET['id'])){
-    echo '<h1 class="text-danger">Try again</h1>';
+    include_once 'includes/erro.php';
   
    }else{
     $id = $_GET['id']; 

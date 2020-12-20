@@ -17,9 +17,9 @@
       $isSuccess = $crud->insert($fname, $lname, $dob ,$email, $contact, $contact2, $specialty, $other);
 
       if($isSuccess){
-          echo'<h1 class="text-center text-success">Welcome to living out</h1>';
+        include_once 'includes/success.php';
       }else{
-          echo'<h1 class="text-center text-danger">Not registered</h1>';
+          include_once 'includes/error.php';
     }
 }
 ?>

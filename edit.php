@@ -5,7 +5,7 @@
     require_once 'db/conn.php';
    
     if(!isset($_GET['id'])){
-        echo 'error';
+        include_once 'includes/erro.php';
     }else{
         $id = $_GET['id'];
         $member = $crud->viewMembersDetails($id);

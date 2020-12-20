@@ -1,7 +1,7 @@
 <?php
     require_once 'db/conn.php';
     if(!$_GET['id']){
-        echo 'error';
+        include_once 'includes/erro.php';
 
     }else{
         $id = $_GET['id'];
@@ -11,7 +11,7 @@
         if($results){
             header("Location: view.php");
         }else{
-            echo '';
+            include_once 'includes/erro.php';
         }
     }
 ?>
