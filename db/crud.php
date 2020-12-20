@@ -54,19 +54,49 @@
         }
        
     }
+    Public function deleteMember($id){
+        try {
+            //code...
+            $sql = "delete from registration where ID = :id";
+            $stmt = $this->db->prepare($sql);
+            $stmt->bindparam(':id',$id);
+            $stmt->execute();
+            return true;
+        } catch (PDOExeceprion $e) {
+            //throw $th;
+            echo $e->getMessage();
+            return false;
+        }
+       
+    }
      public function viewMembersDetails($id){
-        $sql = "select * from registration where ID = :id";
-        $stmt = $this->db->prepare($sql);
-        $stmt->bindparam(':id',$id);
-        $stmt->execute();
-        $results = $stmt->fetch();
-        return $results;
+         try {
+             //code...
+             $sql = "select * from registration where ID = :id";
+             $stmt = $this->db->prepare($sql);
+             $stmt->bindparam(':id',$id);
+             $stmt->execute();
+             $results = $stmt->fetch();
+             return $results;
+         } catch (PDOExeption $e) {
+             //throw $th;
+             echo $e->getMessage();
+            return false;
+         }
+      
      }
      public function viewMembers(){
-        $sql = "SELECT * FROM `registration`";
-        $results =  $this->db->query($sql);
-        return $results;
-     }
+         try {
+             //code...
+             $sql = "SELECT * FROM `registration`";
+             $results =  $this->db->query($sql);
+             return $results;
+         } catch (PDOExeprion $e) {
+             //throw $th;
+             echo $e->getMessage();
+             return false;
+         }
+        }
     
  }
 

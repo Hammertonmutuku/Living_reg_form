@@ -23,7 +23,7 @@
          <td>
          <a href ="view1.php?id=<?php echo $r['ID'] ?>" class = "btn btn-primary">View</a>
          <a href ="edit.php?id=<?php echo $r['ID'] ?>" class = "btn btn-warning">Edit</a>
-         <a href ="edit.php?id=<?php echo $r['ID'] ?>" class = "btn btn-warning">Delete</a>
+         <a onClick="return confirm('Are you sure you want to delete this record?');" href ="delete.php?id=<?php echo $r['ID'] ?>" class = "btn btn-danger">Delete</a>
          <td>
          </tr>
     <?php } ?>
