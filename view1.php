@@ -6,7 +6,7 @@
    
    // Get members by id
    if(!isset($_GET['id'])){
-    include_once 'includes/erro.php';
+    include_once 'includes/error.php';
   
    }else{
     $id = $_GET['id']; 
@@ -29,6 +29,10 @@
         <a href="#" class="card-link"><?php  echo $results['contact2']; ?></a>
     </div>
     </div>
+   <br/>
+    <a href ="view.php" class = "btn btn-primary">Back to list</a>
+         <a href ="edit.php?id=<?php echo $results['ID'] ?>" class = "btn btn-warning">Edit</a>
+         <a onClick="return confirm('Are you sure you want to delete this record?');" href ="delete.php?id=<?php echo $results['ID'] ?>" class = "btn btn-danger">Delete</a>
 <?php  }?>
 <?php
 include_once 'includes/footer.php'

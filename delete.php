@@ -2,6 +2,7 @@
     require_once 'db/conn.php';
     if(!$_GET['id']){
         include_once 'includes/erro.php';
+        header("Location: view.php");
 
     }else{
         $id = $_GET['id'];
