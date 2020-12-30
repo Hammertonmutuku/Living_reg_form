@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Viaoda+Libre&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Viaoda+Libre&display=swap');
+*{
+    font-family: 'Playfair Display', serif; 
+}
+body{
+    background: url(../images/blue1.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+a.navbar-brand{
+    font-size: 24px;
+   
+  }
+.reg-form{
+    background: rgba(0, 0, 0, 0.8);
+    padding: 30px;
+    color:white;
+}
+.form-control{
+    background-color: transparent !important;
+    border: none !important;
+    border-bottom: 2px solid burlywood !important;
+    outline: 0;
+   
+  }
+  input.form-control,input.form-control:focus {
+    border:none;
+    box-shadow: none;
+    color:whitesmoke;
+   -webkit-box-shadow: none;
+   -moz-box-shadow: none;
+   -moz-transition: none;
+   -webkit-transition: none;
+  }
+  input::-webkit-input-placeholder {
+    color: white !important;
+    
+    }
+ 

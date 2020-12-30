@@ -8,19 +8,20 @@
          $this->db = $conn;
      }
      //function to insert records
-     public function insert($fname, $lname,$dob,$email,$contact,$contact2, $specialty, $other){
+     public function insert($fname, $lname,$email,$contact,$contact2, $dob,$specialty, $other, $type2){
          try {
-             $sql = "INSERT INTO registration(firstname,lastname,dateOfBirth,email,contact,contact2,specialty,other) values(:fname,:lname,:dob,:email,:contact,:contact2,:specialty,:other)";
+             $sql = "INSERT INTO Members(firstName,lastName,Email,Contact,Contact2,DateOfBirth,Specialty,Other,TypeOfMember) values(:fname,:lname,:email,:contact,:contact2,:dob,:specialty,:other,:type2)";
              $stmt = $this->db->prepare($sql);
 
              $stmt->bindparam(':fname',$fname); 
              $stmt->bindparam(':lname',$lname); 
-             $stmt->bindparam(':dob',$dob);
              $stmt->bindparam(':email',$email); 
              $stmt->bindparam(':contact',$contact); 
              $stmt->bindparam(':contact2',$contact2);
+             $stmt->bindparam(':dob',$dob);
              $stmt->bindparam(':specialty',$specialty);
              $stmt->bindparam(':other',$other);  
+             $stmt->bindparam(':type2',$type2);  
               
             
              $stmt->execute();
@@ -30,20 +31,21 @@
              return false;
          }
      }
-    public function editMembers($id,$fname,$lname,$dob,$email,$contact,$contact2,$specialty,$other){
+    public function editMembers($id,$fname,$lname,$dob,$email,$contact,$contact2,$specialty,$other,$type2){
         try {
-            $sql = "UPDATE `registration` SET `firstname`=:fname,`lastname`=:lname,`dateOfBirth`=:dob,`email`=:email,`contact`=:contact,`contact2`=:contact2,`specialty`=:specialty,`other`=:other WHERE ID = :id ";
+            $sql = "UPDATE `Members` SET `firstname`=:fname,`lastname`=:lname,`dateOfBirth`=:dob,`email`=:email,`contact`=:contact,`contact2`=:contact2,`specialty`=:specialty,`other`=:other,`TypeOfMember`=:type2 WHERE MemberId = :id ";
 
             $stmt = $this->db->prepare($sql);
             $stmt->bindparam(':id',$id);
             $stmt->bindparam(':fname',$fname); 
             $stmt->bindparam(':lname',$lname); 
-            $stmt->bindparam(':dob',$dob);
             $stmt->bindparam(':email',$email); 
             $stmt->bindparam(':contact',$contact); 
             $stmt->bindparam(':contact2',$contact2);
+            $stmt->bindparam(':dob',$dob);
             $stmt->bindparam(':specialty',$specialty);
-            $stmt->bindparam(':other',$other); 
+            $stmt->bindparam(':other',$other);
+            $stmt->bindparam(':type2',$type2);   
             
             $stmt->execute();
             return true;
@@ -57,7 +59,7 @@
     Public function deleteMember($id){
         try {
             //code...
-            $sql = "delete from registration where ID = :id";
+            $sql = "delete from Members where MemberId = :id";
             $stmt = $this->db->prepare($sql);
             $stmt->bindparam(':id',$id);
             $stmt->execute();
@@ -72,7 +74,7 @@
      public function viewMembersDetails($id){
          try {
              //code...
-             $sql = "select * from registration where ID = :id";
+             $sql = "select * from Members where MemberId = :id";
              $stmt = $this->db->prepare($sql);
              $stmt->bindparam(':id',$id);
              $stmt->execute();
@@ -88,7 +90,7 @@
      public function viewMembers(){
          try {
              //code...
-             $sql = "SELECT * FROM `registration`";
+             $sql = "SELECT * FROM `Members`";
              $results =  $this->db->query($sql);
              return $results;
          } catch (PDOExeprion $e) {
@@ -97,6 +99,18 @@
              return false;
          }
         }
+    public function memberType(){
+        try {
+            //code...
+            $sql = "SELECT * FROM `MemberType`";
+            $results =  $this->db->query($sql);
+            return $results;
+        } catch (PDOExeprion $e) {
+            //throw $th;
+            echo $e->getMessage();
+            return false;
+        }  
+    }
     
  }
 

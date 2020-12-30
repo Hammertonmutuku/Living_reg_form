@@ -1,6 +1,6 @@
 <?php
    $host = '127.0.0.1';
-   $db = 'living_out.ke';
+   $db = 'livingOut-reg-form';
    $user = 'root';
    $password = '';
    $charset = 'utf8mb4';

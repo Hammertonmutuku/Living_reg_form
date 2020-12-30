@@ -16,14 +16,14 @@
     </tr>
     <?php while($r = $results->fetch(PDO::FETCH_ASSOC)) { ?>
          <tr>
-         <td><?php echo $r['ID'] ?></td>
-         <td><?php echo $r['firstname'] ?></td>
-         <td><?php echo $r['lastname'] ?></td>
-         <td><?php echo $r['specialty'] ?></td>
+         <td><?php echo $r['MemberId'] ?></td>
+         <td><?php echo $r['firstName'] ?></td>
+         <td><?php echo $r['lastName'] ?></td>
+         <td><?php echo $r['Specialty'] ?></td>
          <td>
-         <a href ="view1.php?id=<?php echo $r['ID'] ?>" class = "btn btn-primary">View</a>
-         <a href ="edit.php?id=<?php echo $r['ID'] ?>" class = "btn btn-warning">Edit</a>
-         <a onClick="return confirm('Are you sure you want to delete this record?');" href ="delete.php?id=<?php echo $r['ID'] ?>" class = "btn btn-danger">Delete</a>
+         <a href ="view1.php?id=<?php echo $r['MemberId'] ?>" class = "btn btn-primary">View</a>
+         <a href ="edit.php?id=<?php echo $r['MemberId'] ?>" class = "btn btn-warning">Edit</a>
+         <a onClick="return confirm('Are you sure you want to delete this record?');" href ="delete.php?id=<?php echo $r['MemberId'] ?>" class = "btn btn-danger">Delete</a>
          <td>
          </tr>
     <?php } ?>

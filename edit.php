@@ -21,41 +21,45 @@
     <div class="row">
         <div class="col">
         <label for="FirstName">First Name</label>
-        <input type="text" class="form-control" placeholder="Enter First name"  value="<?php echo $member['firstname'] ?>" name="firstName">
+        <input type="text" class="form-control" placeholder="Enter First name"  value="<?php echo $member['firstName'] ?>" name="firstName">
         </div>
         <div class="col">
         <label for="LastName">Last Name</label>
-        <input type="text" class="form-control" placeholder="Last name"  value="<?php echo $member['lastname'] ?>" name="lastName">
+        <input type="text" class="form-control" placeholder="Last name"  value="<?php echo $member['lastName'] ?>" name="lastName">
         </div>
     </div>
     <div class="form-group">
         <label for="InputEmail1">Email address</label>
-        <input type="email" class="form-control" id="InputEmail1" placeholder="official email address"  value="<?php echo $member['email'] ?>" name="email">
+        <input type="email" class="form-control" id="InputEmail1" placeholder="official email address"  value="<?php echo $member['Email'] ?>" name="email">
     </div>
     <div class="form-group">
     <div class="row">
         <div class="col">
         <label for="Contact">Contact </label>
-        <input type="number" class="form-control" id="Contact"  value="<?php echo $member['contact'] ?>" name="contact">
+        <input type="number" class="form-control" id="Contact"  value="<?php echo $member['Contact'] ?>" name="contact">
         </div>
         <div class="col">
         <label for="emergency">Emergency Contact </label>
-        <input type="number" class="form-control" id="emergency"  value="<?php echo $member['contact2'] ?>" name="emergency">
+        <input type="number" class="form-control" id="emergency"  value="<?php echo $member['Contact2'] ?>" name="emergency">
         </div>
     </div>   
     </div>
     <div class="form-group">
         <label for="DateOfBirth">Date of Birth</label>
-        <input type="text" class="form-control" id="dateOfBirth"  value="<?php echo $member['dateOfBirth'] ?>" name="date" >
+        <input type="text" class="form-control" id="dateOfBirth"  value="<?php echo $member['DateOfBirth'] ?>" name="date" >
        
     </div>
     <div class="form-group">
         <label for="inputState">Area of specialty</label>
-        <input type="text" class="form-control" placeholder="Area of specialty"  value="<?php echo $member['specialty'] ?>" name="speciality">
+        <select class="form-control" id="exampleFormControlSelect1" name="type2">
+      <option value="3">Active Member</option>
+      <option value="5">Inactive Member</option>
+      <option value="7">Affiliate Member</option>
+    </select>
     </div>
     <div class="form-group">
         <label for="inputState">Other areas of specialty</label>
-        <input type="text" class="form-control" placeholder="other areas of specialty"  value="<?php echo $member['other'] ?>"  name="others">
+        <input type="text" class="form-control" placeholder="other areas of specialty"  value="<?php echo $member['Other'] ?>"  name="others">
         <small id="Other Area" class="form-text text-muted">If many separate each with a comma. e.g soccar, music, art.</small>
     </div>
    
