@@ -1,17 +1,17 @@
 <?php
    //development processs
-   // $host = '127.0.0.1';
-   // $db = 'livingOut-reg-form';
-   // $user = 'root';
-   // $password = '';
-   // $charset = 'utf8mb4';
+   $host = '127.0.0.1';
+   $db = 'livingOut-reg-form';
+   $user = 'root';
+   $password = '';
+   $charset = 'utf8mb4';
 
    //remote database connection.
-   $host = 'remotemysql.com';
-   $db = 'aoJMnMrr6d';
-   $user = 'aoJMnMrr6d';
-   $password = 'gYZovMaLJt';
-   $charset = 'utf8mb4';
+   // $host = 'remotemysql.com';
+   // $db = 'aoJMnMrr6d';
+   // $user = 'aoJMnMrr6d';
+   // $password = 'gYZovMaLJt';
+   // $charset = 'utf8mb4';
 
    $dsn = "mysql:host=$host;dbname=$db;charset=$charset";
 
@@ -25,5 +25,9 @@
    }
    
    require_once 'crud.php';
+   require_once 'user.php';
    $crud = new crud($pdo);
+   $user = new user($pdo);
+
+   $user->insertUser("admin","password");
 ?>
