@@ -1,3 +1,6 @@
+<?php
+include_once 'includes/session.php'
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,7 +30,24 @@
       <li class="nav-item">
         <a class="nav-link" href="view.php">View members</a>
       </li>
+    <?php
+       if(!isset($_SESSION['username'])){
+    ?>
+      <li class="nav-item">
+      <a class="nav-link" href="login.php">Login</a>
+      </li>
+       <?php }else { ?> 
+        <li class="nav-item">
+        <a class="nav-link" href="#"><span>Hello <?php echo $_SESSION['username'] ?></span></a>
+        </li>
+          <li class="nav-item">
+        <a class="nav-link" href="logout.php">&nbsp Logout</a>
+        </li>
+       <?php } ?>
+      
     </ul>
   </div>
 </nav>
 <br/>
+
+
